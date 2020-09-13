@@ -15,6 +15,11 @@ func TestEditDistanceNaive(t *testing.T) {
 	if got := EditDistanceNaive(s1, s2, len(s1), len(s2)); got != want {
 		t.Errorf("\nEditDistanceNaive(%v, %v, %d, %d) = %d, want %d", s1, s2, len(s1), len(s2), got, want)
 	}
+	want = 2
+	s1, s2 = "ab", "bc"
+	if got := EditDistanceNaive(s1, s2, len(s1), len(s2)); got != want {
+		t.Errorf("\nEditDistanceNaive(%v, %v, %d, %d) = %d, want %d", s1, s2, len(s1), len(s2), got, want)
+	}
 }
 
 func TestEditDistanceRecurseDP(t *testing.T) {
@@ -38,6 +43,11 @@ func TestEditDistanceTabulation(t *testing.T) {
 	}
 	want = 1
 	s1, s2 = "Cat", "Cut"
+	if got := EditDistanceTabulation(s1, s2, len(s1), len(s2)); got != want {
+		t.Errorf("\nEditDistanceTabulation(%v, %v, %d, %d) = %d, want %d", s1, s2, len(s1), len(s2), got, want)
+	}
+	want = 2
+	s1, s2 = "ab", "bc"
 	if got := EditDistanceTabulation(s1, s2, len(s1), len(s2)); got != want {
 		t.Errorf("\nEditDistanceTabulation(%v, %v, %d, %d) = %d, want %d", s1, s2, len(s1), len(s2), got, want)
 	}
