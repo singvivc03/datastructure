@@ -4,6 +4,7 @@ import (
 	"math"
 )
 
+// https://atcoder.jp/contests/dp/tasks/dp_f
 func lcs(str1 string, str2 string) string {
 	dp := createTable(len(str1), len(str2))
 	for i := 1; i <= len(str1); i++ {
